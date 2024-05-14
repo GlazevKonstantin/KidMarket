@@ -1,0 +1,107 @@
+﻿<Page x:Class="KidMarket.StartWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KidMarket"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="830"
+      Title="начальная">
+
+    <Grid Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl Margin="0,0,0,-23" Grid.RowSpan="2">
+            <TabItem Header="Главная" FontSize="17" Background="DarkSlateGray" Foreground="White">
+                <Grid Background="DarkSlateGray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height= "30" />
+                        <RowDefinition Height= "150" />
+                        <RowDefinition Height= "*" />
+                    </Grid.RowDefinitions>
+
+
+                    <Image Source="Image/лого_2.webp" Width="200" Height="115" HorizontalAlignment="Left" Grid.Column="0" Margin="0,-10,0,75" Grid.RowSpan="2"/>
+                    <TextBlock Text="Добро пожаловать в магазин детских товаров Baby Room! У нас вы найдете все необходимое для создания уютной и безопасной обстановки для вашего малыша. В нашем ассортименте представлены товары высокого качества, разработанные с учетом потребностей и комфорта детей.
+
+Мы предлагаем широкий выбор товаров для новорожденных, грудничков и детей дошкольного возраста: от мягких пеленок и удобных детских кроваток до ярких игрушек и функциональных автокресел. В Baby Room вы найдете все для заботы о малыше, его развития и безопасности.
+
+Наша дружелюбная команда с удовольствием поможет вам подобрать подходящие товары и ответит на все ваши вопросы. Посетите наш магазин Baby Room и создайте идеальное пространство для вашего ребенка, где он будет чувствовать себя комфортно и счастливо!" FontSize="20" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Margin="0,75,0,36" Grid.RowSpan="2"/>
+                </Grid>
+            </TabItem>
+
+
+
+
+
+            <TabItem Header ="Скидки"  FontSize="17" Background="DarkSlateGray" Foreground="White">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
+x:Name="coaching_staff" Loaded="Coaching_staff_OnLoaded">
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Условия скидки" Width="*" Binding="{Binding DiscountTerms}"/>
+                            <DataGridTextColumn Header="Размер скидки" Width="*" Binding="{Binding DiscountAmount}"/>
+                            <DataGridTextColumn Header="Дата начала" Width="*" Binding="{Binding StartDate}"/>
+                            <DataGridTextColumn Header="Дата конца" Width="*" Binding="{Binding EndDate}"/>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Отзывы" FontSize="17" Background="DarkSlateGray" Foreground="White">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
+x:Name="team_statistics" Loaded="Team_statistics_OnLoaded">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Отзывы" Width="*" Binding="{Binding Review}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="О доставке" FontSize="17" Background="DarkSlateGray" Foreground="White">
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
+x:Name="transportCompanie" Loaded="Sponsors_OnLoaded">
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Транспортная компания" Width="*" Binding="{Binding TransportCompanyName}"/>
+                            <DataGridTextColumn Header="Срок доставки" Width="*" Binding="{Binding DeliveryTime}"/>
+                            <DataGridTextColumn Header="Условия доставки" Width="*" Binding="{Binding TermsOfDelivery}"/>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+        <Button Height="24" Width="110" Content="Профиль" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="17" Background="DarkSlateGray" Foreground="White" Click="Profile_Click" Panel.ZIndex="1" Margin="0,2,110,0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Height="24" Width="110" Content="Войти" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="17" Background="DarkSlateGray" Foreground="White" Click="Click" Panel.ZIndex="2" Margin="0,2,0,0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Page>
