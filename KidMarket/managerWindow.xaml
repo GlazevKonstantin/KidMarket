@@ -114,19 +114,7 @@ x:Name="OrderGrid" Grid.RowSpan="2" Loaded="OrderGrid_OnLoaded">
                                 
                             </DataGrid.Columns>
                         </DataGrid>
-                        <StackPanel Grid.Row="2"
-HorizontalAlignment="Center"
-Orientation="Horizontal"
-VerticalAlignment="Center">
-                            
-                            <Button Height="25" Background="DarkSlateGray" Foreground="White" 
-Content="Изменить"
-Width ="150" Click="Change_Button_Click" FontSize="17"/>
-                            <Button Height="25" Background="DarkSlateGray" Foreground="White" 
-Click="Remove_Btn_Click" FontSize="17"
-Content="Удалить"
-Width ="150"/>
-                        </StackPanel>
+                        
                     </Grid>
 
                 </Grid>
